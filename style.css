@@ -1,0 +1,359 @@
+* {
+  padding: 3px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+main{
+  font-size: 20px;
+}
+
+body {
+
+  background-image: url('https://www.keepingitcandid.co.za/wp-content/uploads/2022/10/Cocktail-2-ROKU-SONIC-1024x766.jpg');
+  backdrop-filter: blur(5px);
+  background-size: cover;
+  height: 100vh;
+  padding:0;
+  margin:0;  
+}
+
+main #about-us{
+  position: absolute;
+  margin-top: 250px;
+  line-height: 2.0;
+  color: #FFF
+}
+
+main #contact{
+  position: absolute;
+  margin-top: 280px;
+  line-height: 2.0;
+  color: #FFF
+}
+
+.search-container {
+  padding-top: 27%;
+  display: grid;
+  position: absolute;
+  padding-left: 25%;
+  width: 80vw;
+  grid-template-columns: 9fr 3fr;
+  gap: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.search-container input {
+  font-size: 1em;
+  padding: 0.6em 0.3em;
+  border: none;
+  outline: none;
+  color: black;
+  border-bottom: 1.5px solid goldenrod;
+}
+
+.search-container input[type="text"]{
+  background: transparent;
+}
+
+.search-container input:focus {
+  border-color: goldenrod;
+}
+.search-container button {
+  font-size: 1em;
+  border-radius: 2em;
+  background-color: goldenrod;
+  border: none;
+  outline: none;
+  color: black;
+  cursor: pointer;
+}
+
+.socialLogo{
+  color: #FFF;
+  font-size: 20px;
+}
+
+.socialLogo:hover{
+  color: #B1B1B1;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 101px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: transparent;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #B1B1B1;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: auto;
+
+}
+#filter{
+  color: goldenrod;
+  border-radius: 10px;
+  
+}
+#result {
+  color: #1f194c;
+  line-height: 2em;
+}
+
+#result img {
+  display: block;
+  max-width: 12.5em;
+  margin: auto;
+}
+
+#result h2 {
+  font-size: 1.25em;
+  margin: 0.8em 0 1.6em 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #1f194c;
+  position: relative;
+}
+
+#result h2:before {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 3px;
+  background-color: goldenrod;
+  left: 42.5%;
+  bottom: -0.3em;
+}
+
+#result h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.2em;
+  color: #1f194c;
+}
+
+#result ul {
+  margin-bottom: 1em;
+  margin-left: 3em;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#result li {
+  margin-bottom: 0.3em;
+}
+
+#result p {
+  text-align: justify;
+  font-weight: 400;
+  font-size: 0.95em;
+}
+.msg {
+  text-align: center;
+}
+@media screen and (max-width: 580px) {
+  .search-container {
+    padding-top: 350px;
+    font-size: 14px;
+    width: 90vw;
+    padding-left: 1em;
+  }
+
+  .modal{
+    padding-top: 250px;
+    width: 99vw;
+  }
+
+  #result{
+    font-size: 12px;
+  }
+}
+
+/* Create a sticky/fixed navbar */
+#navbar {
+  overflow: hidden;
+  background-color: floralwhite;
+  padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  left: 0px;
+  z-index: 99;
+  box-shadow: 0px 5px 35px 5px rgba(0,0,0,0.75);
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  color: goldenrod;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 99px;
+}
+
+/* Style the logo */
+#navbar #logo {
+  font-size: 47px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+/* Links on mouse-over */
+#navbar a:hover {
+  background-color: #B1B1B1;
+  color: #000;
+}
+
+/* Style the active/current link */
+#navbar a.active {
+  background-color: #B1B1B1;
+  color: black;
+}
+
+/* Display some links to the right */
+#navbar-right {
+  float: right;
+}
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+
+/* Style the search box inside the navigation bar */
+#navbar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+ #navbar input[type=text] {
+    border: 1px solid black;
+  }
+.card {
+  border: 50px solid #goldenrod;
+    border-radius: 5px;
+    padding: 50px;
+    margin: 50px;
+    width: 350px;
+    background-color: floralwhite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.1em;
+    text-align: center;
+    color: #1f194c;
+}
+
+.card-image {
+    text-align: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9em;
+  color: black;
+}
+
+.card ul li {
+    margin-bottom: 0.3em;
+    color: #1f194c;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 100px;
+    justify-content: right;
+}
+.scroll-up-btn{
+  all: unset;
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background-color:dimgrey;
+  border-radius: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.scroll-up-btn .arrow-up{
+  width: 16px;
+  height: 16px;
+  border-left: 4px solid floralwhite;
+  border-bottom: 4px solid floralwhite;
+  transform: rotate(135deg);
+  margrin-bottom: -14px;
+  pointer-events: none;
+}
+
+#logo {
+  font-weight: bold;
+  font-size: 2em;
+  text-decoration: none;
+  color: goldenrod;
+}
